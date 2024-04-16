@@ -1,0 +1,22 @@
+{
+	"name": "quickmaths",
+	"version": "1.0.1",
+	"description": "Discord Bot for training calculations in head.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/EEHoveckis/quickMaths.git"
+	},
+	"author": "EEHoveckis",
+	"license": "CC-BY-4.0",
+	"bugs": {
+		"url": "https://github.com/EEHoveckis/quickMaths/issues"
+	},
+	"homepage": "https://github.com/EEHoveckis/quickMaths#readme",
+	"dependencies": {
+		"discord.js": "^14.12.1"
+	}
+}
