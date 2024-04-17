@@ -1,6 +1,6 @@
 const { prefix } = require("../config.json");
 
-module.exports = function(client) {
+module.exports = function(client, stats) {
 	client.once("ready", readyClient => {
 		console.log(`Bot is Ready!`);
 	});
@@ -13,7 +13,7 @@ module.exports = function(client) {
 		if (!command) return embeds.noCommand(message, commandName);
 
 		try {
-			command.execute(client, message, args);
+			command.execute(client, message, args, stats);
 		} catch (error) {
 			console.error(error);
 		}

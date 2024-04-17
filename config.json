@@ -1,4 +1,5 @@
 {
 	"token": "TOKEN-GOES-HERE",
-	"prefix": "."
+	"prefix": ".",
+	"mongoPass": "MONGO-URI-GOES-HERE"
 }
