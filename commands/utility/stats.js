@@ -4,7 +4,7 @@ module.exports = {
 	execute(client, message, args, stats) {
 		(async function() {
 			await stats.findOne({ userID: message.author.id }).then(user => {
-				message.channel.send(`\`\`\`\nUserID: ${user.userID}\nUsername: ${user.username}\nPoints: ${user.points}\`\`\``);
+				message.channel.send(`\`\`\`\nUserID: ${user.userID}\nUsername: ${user.username}\nHighscore: ${user.highscore} Points\`\`\``);
 			});
 		})();
 	},
