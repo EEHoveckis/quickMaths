@@ -1,5 +1,5 @@
 const { evaluate } = require("mathjs");
-const { questions } = require("../../modules/mathQuestions.js");
+const generateQuestion = require("../../modules/generateQuestion.js");
 
 module.exports = {
 	name: "math",
@@ -17,16 +17,16 @@ module.exports = {
 		let answer = 0;
 
 		function run() {
-			let i = Math.floor(Math.random() * 11) + 0; //0 to 10 inclusive
-			let a = Math.floor(Math.random() * 10) + 1; //1 to 10 inclusive
-			let b = Math.floor(Math.random() * 10) + 1; //1 to 10 inclusive
-			let questionToSend = questions[i].replace(/a/g, a).replace(/b/g, b);
+			let i = Math.floor(Math.random() * 20); //0 to 10 inclusive
+			let questionToSend = generateQuestion(i);
 			answer = evaluate(questionToSend);
+			if (answer == "NaN") answer = 0;
+			//console.log(`${questionToSend} = ${answer}`);
 
 			message.channel.send(questionToSend);
 		}
 		run();
-		const collector = message.channel.createMessageCollector({ filter: collectorFilter, time: 15000 });
+		const collector = message.channel.createMessageCollector({ filter: collectorFilter, time: 30000 });
 		collector.on('collect', m => {
 			if (m.content == answer) {
 				m.react("✅");
